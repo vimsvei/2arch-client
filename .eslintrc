@@ -1,3 +1,30 @@
 {
-  "extends": "react-app"
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:css-modules/recommended"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "react-hooks",
+    "css-modules"
+  ],
+  "rules" : {
+    "no-undef": "off",
+    "no-console": "off",
+    "no-unused-vars": "off",
+    "react/prop-types": "warn",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "warn",
+    "react/jsx-tag-spacing": "warn",
+    "react/display-name": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/destructuring-assignment": "off",
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".jsx", ".js"]
+    }],
+    "no-mixed-spaces-and-tabs": [2, "smart-tabs"]
+  }
 }

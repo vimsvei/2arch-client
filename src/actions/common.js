@@ -1,4 +1,4 @@
-import * as Types from 'action-types';
+import * as Types from './action-types';
 
 const itemSelected = (caption) => {
   return {
@@ -7,6 +7,9 @@ const itemSelected = (caption) => {
   };
 };
 
+const anyConst_2 = 0;
+
 export {
-  itemSelected
-}
+  itemSelected,
+  anyConst_2
+};

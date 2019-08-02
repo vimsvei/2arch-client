@@ -1,5 +1,14 @@
 import React from 'react';
-import {withData} from "../hoc";
-import Selector from "../common/selector";
+import {withData, withService} from "../hoc";
+import {Selector} from "../common";
 
-const ArchetectureState = withData(Selector);
+const mapArchitectStateMethodToProps = (service) => {
+  return {
+    getData: service.getArchitectureState
+  };
+};
+
+const ArchitectState = withService(
+  withData(Selector), mapArchitectStateMethodToProps);
+
+export default ArchitectState;

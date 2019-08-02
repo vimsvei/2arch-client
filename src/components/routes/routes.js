@@ -4,9 +4,9 @@ import Welcome from "../welcome";
 
 const Routes = () => {
   return(
-	<Switch>
-	  <Route path="/welcome" component={Welcome}/>
-	</Switch>
+    <Switch>
+      <Route path="/welcome" component={Welcome} />
+    </Switch>
   );
 };
 
