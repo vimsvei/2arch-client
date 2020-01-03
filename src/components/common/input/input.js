@@ -1,30 +1,29 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Input = ({name, caption, placeholder, value, onChange}) => {
-  
+const Input = ({id, title, placeholder, onChange}) => {
   return(
-	<div className="form-group">
-	  <label htmlFor="input-field" className="col-form-label">
-		{caption}
-	  </label>
-	  <input type="text" className="form-control"
-			 name={name}
-			 value={value}
-			 placeholder={placeholder}
-			 onChange={onChange}
-			 id="input-field" />
-	</div>
+    <div className="form-group">
+      <label htmlFor={id}>{title}</label>
+      <input className="form-control"
+             type="text"
+             placeholder= {placeholder}
+             onChange={onChange}
+             id={id}/>
+    </div>
   );
 };
 
 Input.defaultProps = {
-  placeholder: ''
+  placeholder: '',
+  onChange: () => {}
 };
 
 Input.propTypes = {
-  caption: PropTypes.string.isRequired,
-  placeholder: PropTypes.string
+  id: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func
 };
 
 export default Input;

@@ -1,10 +1,9 @@
-import React from 'react';
-import Welcome from "../welcome";
+import React from "react";
 
 const App = () => {
   return(
     <div>
-      <Welcome />
+      <h1>Hello App!</h1>
     </div>
   );
 };

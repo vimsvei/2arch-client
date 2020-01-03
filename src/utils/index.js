@@ -1,3 +1,5 @@
-import compose from './compose';
+import shortId from "./short-id";
 
-export default compose;
+export {
+  shortId
+};

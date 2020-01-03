@@ -1,14 +1,5 @@
-import Card from "./card";
-import Input from "./input";
-import OpenDialog from "./open-dialog";
-import Selector from "./selector";
-import TextArea from "./text";
-
+import Spinner from "./spinner/spinner";
 
 export {
-  Card,
-  Input,
-  OpenDialog,
-  Selector,
-  TextArea
+  Spinner
 };

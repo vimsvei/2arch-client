@@ -6,4 +6,4 @@ import {
 export {
   ServiceProvider,
   ServiceConsumer
-}
+};

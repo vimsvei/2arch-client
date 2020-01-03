@@ -1,5 +1,3 @@
-import DirectoryService from "./directory-service";
-
 class Service {
   _architectureState = [
     {id: 1, name:'New', color:''},

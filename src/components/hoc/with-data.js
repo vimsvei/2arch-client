@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Spinner from "../spinner";
-import ErrorIndicator from "../error-indicator";
+import Spinner from "../common/spinner";
+import ErrorIndicator from "../error/error-indicator";
 
 const withData = (View) => {
   return class extends React.Component {

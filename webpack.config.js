@@ -1,11 +1,13 @@
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const ExtractTextPlugin = require ('extract-text-webpack-plugin');
 
-module.exports = {
+module.exports = [{
   mode: 'development',
   entry: {
-    arch: "./src/index.js"
+    arch: './src/index.js',
   },
   output: {
 	filename: '[name].bundle.js',
@@ -24,13 +26,6 @@ module.exports = {
 		use: ["babel-loader"]
 	  },
 	  {
-		test: /\.css$/,
-		use: [
-		  'style-loader',
-		  'css-loader',
-		]
-	  },
-	  {
 		test: /\.(png|svg|jpg|gif)$/,
 		use: [
 		  'file-loader'
@@ -41,14 +36,47 @@ module.exports = {
 		use: [
 		  'file-loader'
 		]
-	  }
+	  },
+	  {
+		test: /\.scss$/,
+		use: [
+		  {
+			loader: 'file-loader',
+			options: {
+			  name: 'bundle.css',
+			},
+		  },
+		  { loader: 'extract-loader' },
+		  { loader: 'css-loader' },
+		  {
+		    loader: 'sass-loader',
+			options: {
+			  includePaths: ['./node_modules']
+			}
+		  },
+		  {
+		    loader: 'postcss-loader',
+			options: {
+			  plugins: () => [autoprefixer()]
+			}
+		  }
+		]
+	  },
+	  // {
+		// test: /\.css$/,
+		// loader: ExtractTextPlugin.extract({
+		//   fallback: 'style-loader',
+		//   use: 'css-loader'
+		// })
+	  // }
 	]
   },
   plugins: [
 	new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
+	new HtmlWebpackPlugin({
 	  template: "./public/index.html",
 	  title: 'DEV: 2Arch Client'
 	})
+	// new ExtractTextPlugin('bundle.css')
   ]
-};
+}];
